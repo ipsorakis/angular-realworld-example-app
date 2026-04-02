@@ -1,1 +1,922 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================================================
+   Conduit - Global Styles
+   A clean, modern design for the RealWorld "Conduit" app
+   ============================================================ */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #373a3c;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+a {
+  color: #5cb85c;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: #3d8b3d;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  margin: 1.5rem 0;
+}
+
+/* --- Layout Utilities --- */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.page {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.row > * {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-md-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-md-8 {
+  flex: 0 0 66.6667%;
+  max-width: 66.6667%;
+}
+
+.col-md-10 {
+  flex: 0 0 83.3333%;
+  max-width: 83.3333%;
+}
+
+.col-md-12,
+.col-xs-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.offset-md-1 {
+  margin-left: 8.3333%;
+}
+
+.offset-md-2 {
+  margin-left: 16.6667%;
+}
+
+.offset-md-3 {
+  margin-left: 25%;
+}
+
+.text-xs-center {
+  text-align: center;
+}
+
+.pull-xs-right {
+  float: right;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.navbar-nav .nav-link {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  color: #aaa;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #373a3c;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link.active {
+  color: #373a3c;
+}
+
+.navbar-nav .nav-link i {
+  margin-right: 2px;
+}
+
+.user-pic {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 5px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* --- Banner / Hero --- */
+.banner {
+  background-color: #5cb85c;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.banner h1 {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0.25rem;
+}
+
+.banner p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Article page banner (dark) */
+.article-page > .banner {
+  background-color: #333;
+  text-align: left;
+  padding: 2rem 0;
+}
+
+.article-page > .banner h1 {
+  font-family: "Source Serif Pro", "Merriweather", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: none;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Home Page --- */
+.home-page {
+  background-color: #f5f5f5;
+}
+
+/* --- Feed Toggle / Nav Pills --- */
+.feed-toggle {
+  margin-bottom: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav.nav-pills {
+  display: flex;
+  gap: 0;
+}
+
+.nav.nav-pills .nav-link {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  color: #aaa;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+  text-decoration: none;
+}
+
+.nav.nav-pills .nav-link:hover {
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.nav.nav-pills .nav-link.active {
+  color: #5cb85c;
+  border-bottom-color: #5cb85c;
+}
+
+/* --- Article Preview --- */
+.article-preview {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.article-preview:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Article Meta --- */
+.article-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.article-meta img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.article-meta .info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  margin-right: auto;
+}
+
+.article-meta .info .author {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.article-meta .info .author:hover {
+  text-decoration: underline;
+}
+
+.article-meta .info .date {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+/* --- Preview Link --- */
+.preview-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.preview-link:hover {
+  text-decoration: none;
+}
+
+.preview-link h1 {
+  font-family: "Source Serif Pro", "Merriweather", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #292929;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.preview-link p {
+  font-size: 0.95rem;
+  color: #999;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.preview-link span {
+  font-size: 0.85rem;
+  color: #bbb;
+  font-weight: 300;
+}
+
+/* --- Tag List --- */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.tag-default {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.tag-pill {
+  cursor: pointer;
+}
+
+.tag-outline {
+  border: 1px solid #ddd;
+  color: #aaa;
+  background: transparent;
+}
+
+.tag-outline:hover {
+  background-color: #f0f0f0;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  background: #f3f3f3;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.sidebar p {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: #373a3c;
+}
+
+.sidebar .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.sidebar .tag-list a {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  background-color: #818a91;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.sidebar .tag-list a:hover {
+  background-color: #687077;
+  text-decoration: none;
+}
+
+/* --- Pagination --- */
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.page-item .page-link {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  color: #5cb85c;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.page-item .page-link:hover {
+  background-color: #e9ecef;
+}
+
+.page-item.active .page-link {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  color: #fff;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 4px;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.btn-lg {
+  padding: 0.5rem 1.25rem;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #449d44;
+  border-color: #449d44;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: #5cb85c;
+  color: #5cb85c;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  border-color: #ccc;
+  color: #999;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.btn-outline-danger {
+  background-color: transparent;
+  border-color: #d9534f;
+  color: #d9534f;
+}
+
+.btn-outline-danger:hover {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn.disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* --- Forms --- */
+.form-group {
+  margin-bottom: 1rem;
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #55595c;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  border-color: #5cb85c;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(92, 184, 92, 0.15);
+}
+
+.form-control-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+fieldset[disabled] {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* --- Auth Page --- */
+.auth-page {
+  padding-top: 2rem;
+}
+
+.auth-page h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.auth-page p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* --- Settings Page --- */
+.settings-page {
+  padding-top: 2rem;
+}
+
+.settings-page h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* --- Editor Page --- */
+.editor-page {
+  padding-top: 2rem;
+}
+
+.editor-page .tag-list {
+  margin-top: 0.5rem;
+}
+
+.editor-page .tag-list .tag-default {
+  background-color: #818a91;
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: default;
+}
+
+.editor-page .tag-list .tag-default i {
+  cursor: pointer;
+  margin-right: 4px;
+  font-style: normal;
+}
+
+/* --- Profile Page --- */
+.profile-page .user-info {
+  background-color: #f3f3f3;
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.profile-page .user-info .user-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.profile-page .user-info h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.profile-page .user-info p {
+  color: #aaa;
+  font-size: 0.95rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.articles-toggle {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Article Page (Single Article) --- */
+.article-page .article-content {
+  font-family: "Source Serif Pro", "Merriweather", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #373a3c;
+  margin-bottom: 1.5rem;
+}
+
+.article-page .article-content h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.article-page .article-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.article-page .article-content p {
+  margin-bottom: 1rem;
+}
+
+.article-page .article-content blockquote {
+  border-left: 4px solid #5cb85c;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #666;
+  font-style: italic;
+}
+
+.article-page .article-content code {
+  background-color: #f0f0f0;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.article-page .article-content pre {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.article-actions {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.article-actions .article-meta {
+  justify-content: center;
+}
+
+/* --- Comments --- */
+.comment-form {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.comment-form .card-block {
+  padding: 1rem;
+}
+
+.comment-form .card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+}
+
+.comment-author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.card-block {
+  padding: 1rem 1.25rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.8rem;
+}
+
+.card-footer .comment-author {
+  color: #5cb85c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-footer .comment-author:hover {
+  text-decoration: underline;
+}
+
+.card-footer .date-posted {
+  color: #bbb;
+  font-size: 0.8rem;
+}
+
+.card-footer .mod-options {
+  margin-left: auto;
+}
+
+.card-footer .mod-options i {
+  color: #999;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.card-footer .mod-options i:hover {
+  color: #d9534f;
+}
+
+/* --- Counter (favorite count) --- */
+.counter {
+  font-weight: 400;
+}
+
+/* --- Follow Button --- */
+app-follow-button .btn {
+  margin-right: 0.5rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #f3f3f3;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+footer .logo-font {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+footer .attribution {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+footer .attribution a {
+  color: #5cb85c;
+}
+
+/* --- Error List --- */
+.error-messages {
+  color: #d9534f;
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.error-messages li {
+  list-style: disc;
+  font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .col-md-9,
+  .col-md-3,
+  .col-md-6,
+  .col-md-8,
+  .col-md-10,
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .offset-md-1,
+  .offset-md-2,
+  .offset-md-3 {
+    margin-left: 0;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pull-xs-right {
+    float: none;
+  }
+
+  .sidebar {
+    margin-top: 1rem;
+  }
+}
